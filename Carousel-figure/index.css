@@ -1,0 +1,89 @@
+/*
+* @Author: yucho
+* @Date:   2018-01-20 19:13:08
+* @Last Modified by:   yucho
+* @Last Modified time: 2018-01-21 19:19:43
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    height: 250px;
+    margin: 20px;
+    border: 2px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-images {
+    position: absolute;
+    left: -500px;
+    /*top: -250px;*/
+    width: 3500px;
+    height: 250px;
+}
+
+.banner-images .img {
+    width: 500px;
+    height: 100%;
+    float: left;
+}
+
+.circles {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    text-align: center;
+}  
+
+.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,.3);
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.circle:hover {
+    cursor: pointer;
+}
+
+.active {
+    background: #eee;
+}
+
+.container .button {
+    position: absolute;
+    display: none;
+    width: 32px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #eee;
+    text-align: center;
+    background: rgba(0,0,0,.3);
+}
+
+.container:hover .button {
+    display: block;
+}
+
+.container .button:hover {
+    background: rgba(0,0,0,.5);
+    cursor: pointer;
+}
+
+.container .prev {
+    left: 10px;
+    top: 105px;
+}
+
+.container .next {
+    right: 10px;
+    top: 105px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多级菜单</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,li {
+            list-style: none;
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+        }
+        /* 菜单样式 */
+        .menu-first {
+            width: 700px;
+            margin: 0 auto;
+            height: 40px;
+            background: #eee;
+            background: rgba(0,0,0,.1);
+        }
+        .menu-first a:hover {
+            color: #F57272;
+        }
+        .menu-first a {
+            padding: 0 15px;
+            color: #000;
+        }
+        .menu-first .first {
+            position: relative; 
+            /*经测试发现在IE7使用display: inline-block无效，所以换成float*/
+            float: left;
+            /*display: inline-block;*/
+            width: 130px;
+            line-height: 40px;
+        }
+        .menu-first .first:hover {
+            background: #fff;
+        }
+        /*.menu-first .first:hover .menu-second {
+            display: block;
+        }*/
+        .menu-second { 
+            display: none;
+        }
+        .first .second {
+            position: relative;
+            background: #fff;
+        }
+        .menu-third {
+            position: absolute;
+            left: 130px;
+            top: 0;
+            display: none;
+        }
+        .second:hover .menu-third {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu-first">
+        <li class="first"><a href="#">首页</a></li>
+        <li class="first"><a class="a" href="#">课程大厅</a>
+            <ul class="menu-second">
+                <li class="second"><a href="#">JavaScript</a></li>
+                <li class="second"><a href="#">HTML5</a></li>
+                <li class="second"><a href="#">CSS3</a></li>
+            </ul>
+        </li>
+        <li class="first"><a href="#">学习中心</a>
+            <ul class="menu-second">
+                <li class="second">前端课程
+                    <ul class="menu-third">
+                        <li class="third"><a href="#">JavaScript</a></li>
+                        <li class="third"><a href="#">HTML5</a></li>
+                        <li class="third"><a href="#">CSS3</a></li>
+                    </ul>
+                </li>
+                <li class="second">移动开发
+                    <ul class="menu-third">
+                        <li class="third"><a href="#">Android</a></li>
+                        <li class="third"><a href="#">IOS</a></li>
+                    </ul>
+                </li>
+                <li class="second"><a href="#">后台编程</a></li>
+            </ul>
+        </li>
+        <li class="first"><a href="#">经典案例</a></li>
+        <li class="first"><a href="#">关于我们</a></li>
+    </ul>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var first = $('.first');
+        $('.first').mouseenter(function(event) {
+            $(this).find('.menu-second').slideDown('fast');
+        });
+        $('.first').mouseleave(function(event) {
+            $(this).children('.menu-second').slideUp('fast');
+        });
+    </script>
+</body>
+</html>
