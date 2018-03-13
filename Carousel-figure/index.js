@@ -2,7 +2,7 @@
 * @Author: yucho
 * @Date:   2018-01-20 19:13:29
 * @Last Modified by:   yucho
-* @Last Modified time: 2018-01-22 23:19:36
+* @Last Modified time: 2018-03-14 00:12:32
 */
 var Carousel_figure = {
     pageInfo : {
@@ -72,6 +72,7 @@ var Carousel_figure = {
         function stop () {
             clearInterval(_this.pageInfo.timer);
         }   
+        play();
     },
     /* 复制第一张并放到最后、复制最后一张并放到最前面 */
     cloneImg : function () {
